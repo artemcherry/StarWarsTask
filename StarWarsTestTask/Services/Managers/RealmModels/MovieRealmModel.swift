@@ -15,17 +15,19 @@ class MovieRealmModel: Object {
     @Persisted var director: String?
     @Persisted var producer: String?
     @Persisted var releaseDate: String?
+    @Persisted var url: String?
     
     override static func primaryKey() -> String? {
         return "id"
     }
     
-    convenience init(id: Int, title: String, director: String, producer: String, releaseDate: String) {
+    convenience init(id: Int, title: String, director: String, producer: String, releaseDate: String, url: String) {
         self.init()
         self.id = id
         self.title = title
         self.director = director
         self.producer = producer
         self.releaseDate = releaseDate
+        self.url = url
     }
 }

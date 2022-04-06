@@ -19,6 +19,7 @@ final class MovieListPresenter: MovieListPresenterProtocol {
     private let interactor: MovieListInteractorProtocol?
     private let router: MainRouterProtocol?
     private var movies: [MovieModel]?
+    private var persons: [PersonModel]?
     
     init(view: MovieListViewProtocol, interactor: MovieListInteractorProtocol, router: MainRouterProtocol) {
         self.view = view

@@ -9,6 +9,7 @@ import Foundation
 
 protocol MovieListInteractorProtocol: AnyObject {
     func getMovies(completion: @escaping ([MovieModel]?, Error?) -> Void)
+    func getPersons(completion: @escaping ([PersonModel]?, Error?) -> Void)
 }
 
 final class MovieListInteractor: MovieListInteractorProtocol {
@@ -24,4 +25,15 @@ final class MovieListInteractor: MovieListInteractorProtocol {
             }
         }
     }
+    
+    func getPersons(completion: @escaping ([PersonModel]?, Error?) -> Void) {
+        dataService.getPersons { persons, error in
+            if error != nil {
+                completion(nil, error)
+            } else {
+                completion(persons, nil)
+            }
+        }
+    }
 }
+

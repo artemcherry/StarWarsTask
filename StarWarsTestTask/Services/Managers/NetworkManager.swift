@@ -9,6 +9,8 @@ import Foundation
 
 class NetworkManager {
     
+    private var personPage = 1
+    
     func getMovies(completion: @escaping (MovieList?, Error?) -> Void) {
         let stringUrl = "https://swapi.dev/api/films/"
         guard let url = URL(string: stringUrl) else { return }
@@ -16,7 +18,6 @@ class NetworkManager {
             if let data = data {
                 guard let parcedData = try? JSONDecoder().decode(MovieList.self, from: data) else {
                     completion(nil, error)
-                    print ("OOPs")
                    return
                      }
                 completion(parcedData, nil)
@@ -25,4 +26,19 @@ class NetworkManager {
             task.resume()
     }
     
+    func getPersons(completion: @escaping (PersonList?, Error?) -> Void) {
+        let stringUrl = "https://swapi.dev/api/people/?page=\(personPage)&format=json"
+        guard let url = URL(string: stringUrl) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            if let data = data {
+                guard let parcedData = try? JSONDecoder().decode(PersonList.self, from: data)  else {
+                    completion(nil, error)
+                    return
+                }
+                completion(parcedData, nil)
+                self.personPage += 1
+            }
+        }
+        task.resume()
+    }
 }

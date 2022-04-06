@@ -32,6 +32,20 @@ class DataService {
         }
     }
     
+    func getPersons(completion: @escaping ([PersonModel]?, Error?) -> Void) {
+        DispatchQueue.global(qos: .utility).async { [weak self] in
+            guard let self = self else { return }
+            self.networkManager.getPersons { personList, error in
+                if error == nil {
+                    let persons = personList?.results
+                    completion(persons, error)
+                } else {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
     
     
     private func transformDataToMovieModel(movieData: [MovieRealmModel]) -> [MovieModel] {
@@ -41,7 +55,8 @@ class DataService {
                                      episodeID: movieData.id,
                                      director: movieData.director,
                                      producer: movieData.producer,
-                                     releaseDate: movieData.releaseDate))
+                                     releaseDate: movieData.releaseDate,
+                                     url: movieData.url))
         }
         return movies
     }
@@ -53,7 +68,8 @@ class DataService {
                                              title: movie.title ?? "",
                                              director: movie.director ?? "",
                                              producer: movie.producer ?? "",
-                                             releaseDate: movie.releaseDate ?? ""))
+                                             releaseDate: movie.releaseDate ?? "",
+                                             url: movie.url ?? ""))
         }
         return movieData
     }
