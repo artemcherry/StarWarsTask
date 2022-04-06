@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		444C984B27FD5D4D00F5D23A /* MovieRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C984A27FD5D4D00F5D23A /* MovieRealmModel.swift */; };
 		4458F49D27FB5A1900E3D889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458F49C27FB5A1900E3D889 /* AppDelegate.swift */; };
 		4458F4A127FB5A1900E3D889 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458F4A027FB5A1900E3D889 /* MovieListView.swift */; };
 		4458F4A627FB5A2100E3D889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4458F4A527FB5A2100E3D889 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		444C984A27FD5D4D00F5D23A /* MovieRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRealmModel.swift; sourceTree = "<group>"; };
 		4458F49927FB5A1900E3D889 /* StarWarsTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4458F49C27FB5A1900E3D889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4458F4A027FB5A1900E3D889 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 				AC5D66B6A9D3912ACC971CE0 /* Pods-StarWarsTestTask.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		444C984927FD5D2E00F5D23A /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				444C984A27FD5D4D00F5D23A /* MovieRealmModel.swift */,
+			);
+			path = RealmModels;
 			sourceTree = "<group>";
 		};
 		4458F49027FB5A1800E3D889 = {
@@ -146,6 +156,7 @@
 		4458F4C527FC2E8800E3D889 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				444C984927FD5D2E00F5D23A /* RealmModels */,
 				4458F4C127FC2E7000E3D889 /* NetworkManager.swift */,
 				4458F4C327FC2E8300E3D889 /* RealmManager.swift */,
 			);
@@ -284,6 +295,7 @@
 				4458F4A127FB5A1900E3D889 /* MovieListView.swift in Sources */,
 				4458F4C427FC2E8300E3D889 /* RealmManager.swift in Sources */,
 				4458F49D27FB5A1900E3D889 /* AppDelegate.swift in Sources */,
+				444C984B27FD5D4D00F5D23A /* MovieRealmModel.swift in Sources */,
 				4458F4B627FB5B1E00E3D889 /* MovieListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
