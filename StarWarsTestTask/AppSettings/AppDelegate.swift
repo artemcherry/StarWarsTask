@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         guard let mainScreen = builder.createMovieListScreen(router: router)  else { return false }
         let rootVC  = UINavigationController(rootViewController: mainScreen)
-        window.rootViewController = rootVC
         router.navigationController = rootVC
+
+        window.rootViewController = rootVC
        
         window.makeKeyAndVisible()
         self.window = window

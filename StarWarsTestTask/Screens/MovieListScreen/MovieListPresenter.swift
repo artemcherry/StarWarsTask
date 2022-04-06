@@ -10,6 +10,7 @@ import Foundation
 protocol MovieListPresenterProtocol: AnyObject {
     init(view: MovieListViewProtocol, interactor: MovieListInteractorProtocol, router: MainRouterProtocol)
     func getMovies()
+    func goToPersonsScreen()
 }
 
 final class MovieListPresenter: MovieListPresenterProtocol {
@@ -32,5 +33,9 @@ final class MovieListPresenter: MovieListPresenterProtocol {
                 self.view?.updateView(movieList: movies)
             }
         })
+    }
+    
+    func goToPersonsScreen() {
+        router?.goToPersonsList()
     }
 }

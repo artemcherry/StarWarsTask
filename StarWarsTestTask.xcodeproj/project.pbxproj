@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		444C984B27FD5D4D00F5D23A /* MovieRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C984A27FD5D4D00F5D23A /* MovieRealmModel.swift */; };
+		444C984E27FD734B00F5D23A /* PersonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C984D27FD734B00F5D23A /* PersonsListView.swift */; };
+		444C985027FD736200F5D23A /* PersonsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C984F27FD736200F5D23A /* PersonsListPresenter.swift */; };
+		444C985227FD736F00F5D23A /* PersonsListInteracor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C985127FD736F00F5D23A /* PersonsListInteracor.swift */; };
+		444C985427FD737800F5D23A /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C985327FD737800F5D23A /* PersonModel.swift */; };
 		4458F49D27FB5A1900E3D889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458F49C27FB5A1900E3D889 /* AppDelegate.swift */; };
 		4458F4A127FB5A1900E3D889 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458F4A027FB5A1900E3D889 /* MovieListView.swift */; };
 		4458F4A627FB5A2100E3D889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4458F4A527FB5A2100E3D889 /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		444C984A27FD5D4D00F5D23A /* MovieRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRealmModel.swift; sourceTree = "<group>"; };
+		444C984D27FD734B00F5D23A /* PersonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListView.swift; sourceTree = "<group>"; };
+		444C984F27FD736200F5D23A /* PersonsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListPresenter.swift; sourceTree = "<group>"; };
+		444C985127FD736F00F5D23A /* PersonsListInteracor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListInteracor.swift; sourceTree = "<group>"; };
+		444C985327FD737800F5D23A /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		4458F49927FB5A1900E3D889 /* StarWarsTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4458F49C27FB5A1900E3D889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4458F4A027FB5A1900E3D889 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
@@ -75,6 +83,17 @@
 			path = RealmModels;
 			sourceTree = "<group>";
 		};
+		444C984C27FD730E00F5D23A /* PersonsListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				444C984D27FD734B00F5D23A /* PersonsListView.swift */,
+				444C984F27FD736200F5D23A /* PersonsListPresenter.swift */,
+				444C985127FD736F00F5D23A /* PersonsListInteracor.swift */,
+				444C985327FD737800F5D23A /* PersonModel.swift */,
+			);
+			path = PersonsListScreen;
+			sourceTree = "<group>";
+		};
 		4458F49027FB5A1800E3D889 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +131,7 @@
 				4458F4B727FB5B2F00E3D889 /* MainRouter.swift */,
 				4458F4B927FB5B3C00E3D889 /* MainBuilder.swift */,
 				4458F4B127FB5ADF00E3D889 /* MovieListScreen */,
+				444C984C27FD730E00F5D23A /* PersonsListScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -156,9 +176,9 @@
 		4458F4C527FC2E8800E3D889 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				444C984927FD5D2E00F5D23A /* RealmModels */,
 				4458F4C127FC2E7000E3D889 /* NetworkManager.swift */,
 				4458F4C327FC2E8300E3D889 /* RealmManager.swift */,
+				444C984927FD5D2E00F5D23A /* RealmModels */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -285,14 +305,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444C985227FD736F00F5D23A /* PersonsListInteracor.swift in Sources */,
 				4458F4C227FC2E7000E3D889 /* NetworkManager.swift in Sources */,
+				444C985027FD736200F5D23A /* PersonsListPresenter.swift in Sources */,
 				4458F4BD27FC27EB00E3D889 /* MovieCell.swift in Sources */,
+				444C985427FD737800F5D23A /* PersonModel.swift in Sources */,
 				4458F4B827FB5B2F00E3D889 /* MainRouter.swift in Sources */,
 				4458F4B427FB5B0600E3D889 /* MovieListPresenter.swift in Sources */,
 				4458F4BA27FB5B3C00E3D889 /* MainBuilder.swift in Sources */,
 				4458F4C727FC2E9700E3D889 /* DataService.swift in Sources */,
 				4458F4BF27FC285500E3D889 /* MovieList.swift in Sources */,
 				4458F4A127FB5A1900E3D889 /* MovieListView.swift in Sources */,
+				444C984E27FD734B00F5D23A /* PersonsListView.swift in Sources */,
 				4458F4C427FC2E8300E3D889 /* RealmManager.swift in Sources */,
 				4458F49D27FB5A1900E3D889 /* AppDelegate.swift in Sources */,
 				444C984B27FD5D4D00F5D23A /* MovieRealmModel.swift in Sources */,

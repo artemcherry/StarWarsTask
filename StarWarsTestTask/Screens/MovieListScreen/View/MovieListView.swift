@@ -39,8 +39,7 @@ final class MovieListView: UIViewController, MovieListViewProtocol {
         movieTable.delegate = self
         movieTable.dataSource = self
         
-        navigationItem.searchController = searchView
-        searchView.searchBar.delegate = self
+        setupSearchBar()
         
         setupView()
         
@@ -91,9 +90,21 @@ extension MovieListView: UITableViewDelegate, UITableViewDataSource {
         cell.setupCell(model: movies[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter?.goToPersonsScreen()
+    }
+    
 }
 
+//MARK: - SearchBar
 extension MovieListView: UISearchBarDelegate {
+    
+    private func setupSearchBar() {
+        navigationItem.searchController = searchView
+        searchView.searchBar.delegate = self
+    }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         movieList =  movieList?.filter{$0.title?.range(of: searchText, options: .caseInsensitive) != nil }

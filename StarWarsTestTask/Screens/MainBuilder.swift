@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainBuilderProtocol: AnyObject {
     func createMovieListScreen(router: MainRouterProtocol) -> UIViewController?
+    func createPersonsListScreen(router: MainRouterProtocol) -> UIViewController?
 }
 
 class MainBuilder: MainBuilderProtocol {
@@ -18,6 +19,14 @@ class MainBuilder: MainBuilderProtocol {
         let view = MovieListView()
         let interactor = MovieListInteractor()
         let presenter = MovieListPresenter(view: view, interactor: interactor, router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func createPersonsListScreen(router: MainRouterProtocol) -> UIViewController? {
+        let view = PersonsListView()
+        let interactor = PersonsListInteracor()
+        let presenter = PersonsListPresenter(view: view, interactor: interactor, router: router)
         view.presenter = presenter
         return view
     }

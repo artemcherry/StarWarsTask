@@ -25,7 +25,6 @@ class RealmManager {
     }
     
     func saveMovies(objects: [MovieRealmModel]) {
-        print(Realm.bund)
         let realm = createRealm()
         do {
             try objects.forEach { object in
