@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		444C984B27FD5D4D00F5D23A /* MovieRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C984A27FD5D4D00F5D23A /* MovieRealmModel.swift */; };
 		444C984E27FD734B00F5D23A /* PersonsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C984D27FD734B00F5D23A /* PersonsListView.swift */; };
 		444C985027FD736200F5D23A /* PersonsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C984F27FD736200F5D23A /* PersonsListPresenter.swift */; };
 		444C985227FD736F00F5D23A /* PersonsListInteracor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C985127FD736F00F5D23A /* PersonsListInteracor.swift */; };
@@ -24,13 +23,10 @@
 		4458F4BD27FC27EB00E3D889 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458F4BC27FC27EB00E3D889 /* MovieCell.swift */; };
 		4458F4BF27FC285500E3D889 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458F4BE27FC285500E3D889 /* MovieList.swift */; };
 		4458F4C227FC2E7000E3D889 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458F4C127FC2E7000E3D889 /* NetworkManager.swift */; };
-		4458F4C427FC2E8300E3D889 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458F4C327FC2E8300E3D889 /* RealmManager.swift */; };
 		4458F4C727FC2E9700E3D889 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458F4C627FC2E9700E3D889 /* DataService.swift */; };
-		DF472B8199E31E45BACA4B2D /* Pods_StarWarsTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00181211644BB16088DC4AD /* Pods_StarWarsTestTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		444C984A27FD5D4D00F5D23A /* MovieRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRealmModel.swift; sourceTree = "<group>"; };
 		444C984D27FD734B00F5D23A /* PersonsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListView.swift; sourceTree = "<group>"; };
 		444C984F27FD736200F5D23A /* PersonsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListPresenter.swift; sourceTree = "<group>"; };
 		444C985127FD736F00F5D23A /* PersonsListInteracor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsListInteracor.swift; sourceTree = "<group>"; };
@@ -49,11 +45,7 @@
 		4458F4BC27FC27EB00E3D889 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		4458F4BE27FC285500E3D889 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		4458F4C127FC2E7000E3D889 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		4458F4C327FC2E8300E3D889 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		4458F4C627FC2E9700E3D889 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		5775482F6F2EAE55BE9855FA /* Pods-StarWarsTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsTestTask.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsTestTask/Pods-StarWarsTestTask.debug.xcconfig"; sourceTree = "<group>"; };
-		AC5D66B6A9D3912ACC971CE0 /* Pods-StarWarsTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsTestTask.release.xcconfig"; path = "Target Support Files/Pods-StarWarsTestTask/Pods-StarWarsTestTask.release.xcconfig"; sourceTree = "<group>"; };
-		B00181211644BB16088DC4AD /* Pods_StarWarsTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,30 +53,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF472B8199E31E45BACA4B2D /* Pods_StarWarsTestTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A22863D18BF68EACA82ABD2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5775482F6F2EAE55BE9855FA /* Pods-StarWarsTestTask.debug.xcconfig */,
-				AC5D66B6A9D3912ACC971CE0 /* Pods-StarWarsTestTask.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		444C984927FD5D2E00F5D23A /* RealmModels */ = {
-			isa = PBXGroup;
-			children = (
-				444C984A27FD5D4D00F5D23A /* MovieRealmModel.swift */,
-			);
-			path = RealmModels;
-			sourceTree = "<group>";
-		};
 		444C984C27FD730E00F5D23A /* PersonsListScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,8 +84,6 @@
 			children = (
 				4458F49B27FB5A1900E3D889 /* StarWarsTestTask */,
 				4458F49A27FB5A1900E3D889 /* Products */,
-				3A22863D18BF68EACA82ABD2 /* Pods */,
-				DA987E99353067EAD8FF6F26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,18 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				4458F4C127FC2E7000E3D889 /* NetworkManager.swift */,
-				4458F4C327FC2E8300E3D889 /* RealmManager.swift */,
-				444C984927FD5D2E00F5D23A /* RealmModels */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		DA987E99353067EAD8FF6F26 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B00181211644BB16088DC4AD /* Pods_StarWarsTestTask.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,11 +171,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4458F4AD27FB5A2100E3D889 /* Build configuration list for PBXNativeTarget "StarWarsTestTask" */;
 			buildPhases = (
-				5D3E66DF13D56F27E11FCC33 /* [CP] Check Pods Manifest.lock */,
 				4458F49527FB5A1800E3D889 /* Sources */,
 				4458F49627FB5A1800E3D889 /* Frameworks */,
 				4458F49727FB5A1800E3D889 /* Resources */,
-				3E4FD27555432BC5C75AA7E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,48 +229,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3E4FD27555432BC5C75AA7E0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StarWarsTestTask/Pods-StarWarsTestTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StarWarsTestTask/Pods-StarWarsTestTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarWarsTestTask/Pods-StarWarsTestTask-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5D3E66DF13D56F27E11FCC33 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StarWarsTestTask-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4458F49527FB5A1800E3D889 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -328,10 +246,8 @@
 				4458F4BF27FC285500E3D889 /* MovieList.swift in Sources */,
 				4458F4A127FB5A1900E3D889 /* MovieListView.swift in Sources */,
 				444C984E27FD734B00F5D23A /* PersonsListView.swift in Sources */,
-				4458F4C427FC2E8300E3D889 /* RealmManager.swift in Sources */,
 				4458F49D27FB5A1900E3D889 /* AppDelegate.swift in Sources */,
 				444C985727FE109500F5D23A /* PersonListCell.swift in Sources */,
-				444C984B27FD5D4D00F5D23A /* MovieRealmModel.swift in Sources */,
 				4458F4B627FB5B1E00E3D889 /* MovieListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,7 +382,6 @@
 		};
 		4458F4AE27FB5A2100E3D889 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5775482F6F2EAE55BE9855FA /* Pods-StarWarsTestTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -494,7 +409,6 @@
 		};
 		4458F4AF27FB5A2100E3D889 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC5D66B6A9D3912ACC971CE0 /* Pods-StarWarsTestTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
