@@ -7,19 +7,22 @@
 
 import UIKit
 
-protocol PersonsListViewProtocol: AnyObject {}
+protocol PersonsListViewProtocol: AnyObject {
+    func setupView(persons: [PersonModel])
+}
 
 class PersonsListView: UIViewController, PersonsListViewProtocol {
     
     private let personsTable: UITableView = {
         let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(PersonListCell.self, forCellReuseIdentifier: PersonListCell.identifier)
         table.backgroundColor = .systemBackground
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
     
     var presenter: PersonsListPresenterProtocol?
+    private var personList: [PersonModel]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,11 @@ class PersonsListView: UIViewController, PersonsListViewProtocol {
         personsTable.delegate = self
         personsTable.dataSource = self
         
+    }
+    
+    func setupView(persons: [PersonModel]) {
+        self.personList = persons
+        self.personsTable.reloadData()
     }
     
     private func setupView() {
@@ -45,15 +53,19 @@ class PersonsListView: UIViewController, PersonsListViewProtocol {
     
 }
 
+//MARK: - TableViewSetup
 extension PersonsListView: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        75
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "test"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonListCell.identifier, for: indexPath) as? PersonListCell else { return UITableViewCell() }
         return cell
     }
     

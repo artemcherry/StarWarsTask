@@ -37,6 +37,6 @@ final class MovieListPresenter: MovieListPresenterProtocol {
     }
     
     func goToPersonsScreen() {
-        router?.goToPersonsList()
+        self.router?.goToPersonsList(persons: persons ?? [])
     }
 }

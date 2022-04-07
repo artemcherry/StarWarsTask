@@ -60,6 +60,7 @@ class MovieCell: UITableViewCell {
         producerLabel.text = "Producer: \(model.producer ?? "")"
     }
     
+    //MARK: - ViewSetup
     private func setupView() {
         addSubview(titleLabel)
         

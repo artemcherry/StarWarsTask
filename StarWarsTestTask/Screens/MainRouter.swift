@@ -11,7 +11,7 @@ import UIKit
 protocol MainRouterProtocol {
     var mainBuilder: MainBuilderProtocol? { get set }
     init(builder: MainBuilderProtocol)
-    func goToPersonsList()
+    func goToPersonsList(persons: [PersonModel])
 }
 
 class MainRouter: MainRouterProtocol {
@@ -23,8 +23,8 @@ class MainRouter: MainRouterProtocol {
         self.mainBuilder = builder
     }
     
-    func goToPersonsList() {
-        guard let personsScreen = mainBuilder?.createPersonsListScreen(router: self) as? PersonsListView else { return }
+    func goToPersonsList(persons: [PersonModel]) {
+        guard let personsScreen = mainBuilder?.createPersonsListScreen(router: self, persons: persons) as? PersonsListView else { return }
         self.navigationController?.pushViewController(personsScreen, animated: true)
     }
 }
