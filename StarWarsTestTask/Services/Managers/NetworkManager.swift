@@ -28,7 +28,10 @@ class NetworkManager {
     
     func getPersons(completion: @escaping (PersonList?, Error?) -> Void) {
         let stringUrl = "https://swapi.dev/api/people/?page=\(personPage)&format=json"
-        guard let url = URL(string: stringUrl) else { return }
+        guard let url = URL(string: stringUrl) else {
+            personPage = 1
+            return
+        }
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let data = data {
                 guard let parcedData = try? JSONDecoder().decode(PersonList.self, from: data)  else {

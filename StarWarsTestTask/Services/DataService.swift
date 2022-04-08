@@ -34,8 +34,10 @@ class DataService {
             guard let self = self else { return }
             self.networkManager.getPersons { personList, error in
                 if error == nil {
-                    let persons = personList?.results
-                    completion(persons, error)
+                    DispatchQueue.main.async {
+                        let persons = personList?.results
+                        completion(persons, error)
+                    }
                 } else {
                     completion(nil, error)
                 }

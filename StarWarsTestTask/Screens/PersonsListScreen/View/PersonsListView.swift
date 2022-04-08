@@ -81,7 +81,7 @@ extension PersonsListView: UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Pagination
         if(scrollView.contentOffset.y >= (personsTable.contentSize.height - scrollView.frame.size.height )) {
-            self.presenter?.getPersonsList()
+            self.presenter?.getMorePersons()
         }
     }
 }
