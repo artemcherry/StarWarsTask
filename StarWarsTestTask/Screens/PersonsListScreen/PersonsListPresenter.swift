@@ -11,7 +11,8 @@ protocol PersonsListPresenterProtocol: AnyObject {
     init(view: PersonsListViewProtocol,
          interactor: PersonsListInteracorProtocol,
          router: MainRouterProtocol,
-         persons: [PersonModel])
+         persons: [PersonModel],
+         movieName: String)
     func getPersonsList()
 }
 
@@ -21,20 +22,25 @@ class PersonsListPresenter: PersonsListPresenterProtocol {
     private let interactor: PersonsListInteracorProtocol?
     private let router: MainRouterProtocol?
     private let persons: [PersonModel]?
+    private let movieName: String?
     
     required init(view: PersonsListViewProtocol,
                   interactor: PersonsListInteracorProtocol,
                   router: MainRouterProtocol,
-                  persons: [PersonModel]) {
+                  persons: [PersonModel],
+                  movieName: String) {
         
         self.view = view
         self.interactor = interactor
         self.router = router
         self.persons = persons
+        self.movieName = movieName
     }
     
     func getPersonsList() {
-        guard let persons = persons else { return }
-        view?.setupView(persons: persons)
+        guard let persons = persons,
+              let movieName = movieName
+        else { return }
+        self.view?.setupView(persons: persons, movieName: movieName)
     }
 }

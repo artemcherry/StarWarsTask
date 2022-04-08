@@ -10,7 +10,7 @@ import Foundation
 protocol MovieListPresenterProtocol: AnyObject {
     init(view: MovieListViewProtocol, interactor: MovieListInteractorProtocol, router: MainRouterProtocol)
     func getMovies()
-    func goToPersonsScreen()
+    func goToPersonsScreen(index: Int, movieName: String)
 }
 
 final class MovieListPresenter: MovieListPresenterProtocol {
@@ -36,7 +36,20 @@ final class MovieListPresenter: MovieListPresenterProtocol {
         })
     }
     
-    func goToPersonsScreen() {
-        self.router?.goToPersonsList(persons: persons ?? [])
+    func goToPersonsScreen(index: Int, movieName: String) {
+        guard let movies = movies else { return }
+
+        var filteredPersons = [PersonModel]()
+        
+        interactor?.getPersons(completion: { persons, error in
+            persons?.forEach({ person in
+                if ((person.films?.contains(movies[index].url ?? "")) != nil) {
+                    filteredPersons.append(person)
+                }
+            })
+            DispatchQueue.main.async {
+                self.router?.goToPersonsList(persons: filteredPersons, movieName: movieName )
+            }
+        })
     }
 }

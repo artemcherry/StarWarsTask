@@ -12,7 +12,7 @@ class NetworkManager {
     private var personPage = 1
     
     func getMovies(completion: @escaping (MovieList?, Error?) -> Void) {
-        let stringUrl = "https://swapi.dev/api/films/"
+        let stringUrl = "https://swapi.dev/api/films/?format=json"
         guard let url = URL(string: stringUrl) else { return }
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let data = data {
@@ -36,9 +36,9 @@ class NetworkManager {
                     return
                 }
                 completion(parcedData, nil)
-                self.personPage += 1
             }
         }
         task.resume()
+        self.personPage += 1
     }
 }

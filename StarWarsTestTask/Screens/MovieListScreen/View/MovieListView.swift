@@ -30,7 +30,7 @@ final class MovieListView: UIViewController, MovieListViewProtocol {
     
     var presenter: MovieListPresenterProtocol?
     private var movieList: [MovieModel]?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +50,6 @@ final class MovieListView: UIViewController, MovieListViewProtocol {
         self.movieList = movieList
         movieTable.reloadData()
     }
-
 
 }
 
@@ -93,7 +92,7 @@ extension MovieListView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presenter?.goToPersonsScreen()
+        presenter?.goToPersonsScreen(index: indexPath.row, movieName: movieList?[indexPath.row].title ?? "")
     }
     
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PersonsListViewProtocol: AnyObject {
-    func setupView(persons: [PersonModel])
+    func setupView(persons: [PersonModel], movieName: String)
 }
 
 class PersonsListView: UIViewController, PersonsListViewProtocol {
@@ -22,20 +22,26 @@ class PersonsListView: UIViewController, PersonsListViewProtocol {
     }()
     
     var presenter: PersonsListPresenterProtocol?
-    private var personList: [PersonModel]?
+    private var personList = [PersonModel]()
+    private var movieName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
+        
 
         personsTable.delegate = self
         personsTable.dataSource = self
         
+        presenter?.getPersonsList()
+        
     }
     
-    func setupView(persons: [PersonModel]) {
-        self.personList = persons
+    func setupView(persons: [PersonModel], movieName: String) {
+        self.personList.append(contentsOf: persons)
+        print(personList)
+        self.title = movieName
         self.personsTable.reloadData()
     }
     
@@ -61,15 +67,21 @@ extension PersonsListView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        personList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonListCell.identifier, for: indexPath) as? PersonListCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonListCell.identifier, for: indexPath) as? PersonListCell
+       
+        else { return UITableViewCell() }
+        cell.setupCell(model: personList[indexPath.row])
         return cell
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Pagination
+        if(scrollView.contentOffset.y >= (personsTable.contentSize.height - scrollView.frame.size.height )) {
+            self.presenter?.getPersonsList()
+        }
     }
 }
