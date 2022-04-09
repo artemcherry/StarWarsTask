@@ -12,6 +12,7 @@ protocol MainRouterProtocol {
     var mainBuilder: MainBuilderProtocol? { get set }
     init(builder: MainBuilderProtocol)
     func goToPersonsList(persons: [PersonModel], movieName: String)
+    func goToHomePlanetScreen(planet: HomePlanetModel)
 }
 
 class MainRouter: MainRouterProtocol {
@@ -26,5 +27,10 @@ class MainRouter: MainRouterProtocol {
     func goToPersonsList(persons: [PersonModel], movieName: String) {
         guard let personsScreen = mainBuilder?.createPersonsListScreen(router: self, persons: persons, movieName: movieName) as? PersonsListView else { return }
         self.navigationController?.pushViewController(personsScreen, animated: true)
+    }
+    
+    func goToHomePlanetScreen(planet: HomePlanetModel) {
+        guard let homePlanetScreen = mainBuilder?.createHomePlanetScreen(router: self, planet: planet) else { return }
+        self.navigationController?.pushViewController(homePlanetScreen, animated: true)
     }
 }

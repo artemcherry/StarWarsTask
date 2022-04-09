@@ -15,6 +15,7 @@ protocol PersonsListPresenterProtocol: AnyObject {
          movieName: String)
     func getPersonsList()
     func getMorePersons()
+    func goToHomePlanetScreen(planet: HomePlanetModel)
 }
 
 class PersonsListPresenter: PersonsListPresenterProtocol {
@@ -54,4 +55,10 @@ class PersonsListPresenter: PersonsListPresenterProtocol {
             }
         })
     }
+    
+    func goToHomePlanetScreen(planet: HomePlanetModel) {
+        router?.goToHomePlanetScreen(planet: planet)
+    }
+    
+    
 }

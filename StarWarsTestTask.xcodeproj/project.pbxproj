@@ -27,6 +27,9 @@
 		447544AB27FF1B4E00D660A9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 447544AA27FF1B4E00D660A9 /* Realm */; };
 		447544AD27FF1B4E00D660A9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 447544AC27FF1B4E00D660A9 /* RealmSwift */; };
 		447544AF27FF1C7D00D660A9 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447544AE27FF1C7D00D660A9 /* RealmManager.swift */; };
+		44C6F5DF2801720D00D00F3F /* HomePlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F5DE2801720D00D00F3F /* HomePlanetView.swift */; };
+		44C6F5E32801722F00D00F3F /* HomePlanetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F5E22801722F00D00F3F /* HomePlanetPresenter.swift */; };
+		44C6F5E52801723D00D00F3F /* HomePlanetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F5E42801723D00D00F3F /* HomePlanetModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		4458F4C127FC2E7000E3D889 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4458F4C627FC2E9700E3D889 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		447544AE27FF1C7D00D660A9 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		44C6F5DE2801720D00D00F3F /* HomePlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanetView.swift; sourceTree = "<group>"; };
+		44C6F5E22801722F00D00F3F /* HomePlanetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanetPresenter.swift; sourceTree = "<group>"; };
+		44C6F5E42801723D00D00F3F /* HomePlanetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlanetModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 				4458F4B927FB5B3C00E3D889 /* MainBuilder.swift */,
 				4458F4B127FB5ADF00E3D889 /* MovieListScreen */,
 				444C984C27FD730E00F5D23A /* PersonsListScreen */,
+				44C6F5DD280171DF00D00F3F /* HomePlanetScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -169,6 +176,16 @@
 				447544AE27FF1C7D00D660A9 /* RealmManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		44C6F5DD280171DF00D00F3F /* HomePlanetScreen */ = {
+			isa = PBXGroup;
+			children = (
+				44C6F5DE2801720D00D00F3F /* HomePlanetView.swift */,
+				44C6F5E22801722F00D00F3F /* HomePlanetPresenter.swift */,
+				44C6F5E42801723D00D00F3F /* HomePlanetModel.swift */,
+			);
+			path = HomePlanetScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,13 +266,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				444C985227FD736F00F5D23A /* PersonsListInteracor.swift in Sources */,
+				44C6F5E32801722F00D00F3F /* HomePlanetPresenter.swift in Sources */,
 				4458F4C227FC2E7000E3D889 /* NetworkManager.swift in Sources */,
 				444C985027FD736200F5D23A /* PersonsListPresenter.swift in Sources */,
 				4458F4BD27FC27EB00E3D889 /* MovieCell.swift in Sources */,
+				44C6F5DF2801720D00D00F3F /* HomePlanetView.swift in Sources */,
 				444C985427FD737800F5D23A /* PersonModel.swift in Sources */,
 				4458F4B827FB5B2F00E3D889 /* MainRouter.swift in Sources */,
 				4458F4B427FB5B0600E3D889 /* MovieListPresenter.swift in Sources */,
 				4458F4BA27FB5B3C00E3D889 /* MainBuilder.swift in Sources */,
+				44C6F5E52801723D00D00F3F /* HomePlanetModel.swift in Sources */,
 				4458F4C727FC2E9700E3D889 /* DataService.swift in Sources */,
 				447544AF27FF1C7D00D660A9 /* RealmManager.swift in Sources */,
 				4458F4BF27FC285500E3D889 /* MovieList.swift in Sources */,

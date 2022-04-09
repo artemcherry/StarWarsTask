@@ -40,7 +40,6 @@ class PersonsListView: UIViewController, PersonsListViewProtocol {
     
     func setupView(persons: [PersonModel], movieName: String) {
         self.personList.append(contentsOf: persons)
-        print(personList)
         self.title = movieName
         self.personsTable.reloadData()
     }
@@ -77,9 +76,9 @@ extension PersonsListView: UITableViewDelegate, UITableViewDataSource {
         cell.setupCell(model: personList[indexPath.row])
         return cell
     }
-    
+  
+    //MARK: - Pagination
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // Pagination
         if(scrollView.contentOffset.y >= (personsTable.contentSize.height - scrollView.frame.size.height )) {
             self.presenter?.getMorePersons()
         }

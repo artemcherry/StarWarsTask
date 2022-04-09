@@ -11,6 +11,7 @@ import UIKit
 protocol MainBuilderProtocol: AnyObject {
     func createMovieListScreen(router: MainRouterProtocol) -> UIViewController?
     func createPersonsListScreen(router: MainRouterProtocol, persons: [PersonModel], movieName: String) -> UIViewController?
+    func createHomePlanetScreen(router: MainRouterProtocol, planet: HomePlanetModel) -> UIViewController?
 }
 
 class MainBuilder: MainBuilderProtocol {
@@ -27,6 +28,13 @@ class MainBuilder: MainBuilderProtocol {
         let view = PersonsListView()
         let interactor = PersonsListInteracor()
         let presenter = PersonsListPresenter(view: view, interactor: interactor, router: router, persons: persons, movieName: movieName)
+        view.presenter = presenter
+        return view
+    }
+    
+    func createHomePlanetScreen(router: MainRouterProtocol, planet: HomePlanetModel) -> UIViewController? {
+        let view = HomePlanetView()
+        let presenter = HomePlanetPresenter(view: view, router: router, planet: planet)
         view.presenter = presenter
         return view
     }

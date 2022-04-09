@@ -27,6 +27,12 @@ final class MovieListView: UIViewController, MovieListViewProtocol {
         return table
     }()
     
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
+    
     
     var presenter: MovieListPresenterProtocol?
     private var movieList: [MovieModel]?
@@ -48,6 +54,8 @@ final class MovieListView: UIViewController, MovieListViewProtocol {
     
     func updateView(movieList: [MovieModel]) {
         self.movieList = movieList
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
         movieTable.reloadData()
     }
 
@@ -65,6 +73,15 @@ extension MovieListView {
             movieTable.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             movieTable.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             movieTable.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
 }
