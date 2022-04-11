@@ -76,6 +76,11 @@ extension PersonsListView: UITableViewDelegate, UITableViewDataSource {
         cell.setupCell(model: personList[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let home = HomePlanetModel(name: "", diameter: "", climate: "", gravity: "", terrain: "", population: "")
+        presenter?.goToHomePlanetScreen(planet: home)
+    }
   
     //MARK: - Pagination
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

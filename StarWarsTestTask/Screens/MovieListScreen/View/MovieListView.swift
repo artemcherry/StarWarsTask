@@ -112,6 +112,7 @@ extension MovieListView: UITableViewDelegate, UITableViewDataSource {
         presenter?.goToPersonsScreen(index: indexPath.row, movieName: movieList?[indexPath.row].title ?? "")
     }
     
+    
 }
 
 //MARK: - SearchBar
